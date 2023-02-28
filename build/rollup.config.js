@@ -2,7 +2,9 @@ const babel = require('rollup-plugin-babel')
 const { terser } = require('rollup-plugin-terser')
 
 module.exports = (config) => {
-  const { input, fileName, name } = config
+  const {
+    input, fileName, name, format
+  } = config
   return {
     input: {
       input,
@@ -18,7 +20,7 @@ module.exports = (config) => {
     },
     output: {
       file: fileName,
-      format: 'umd',
+      format: format || 'umd',
       name: name || 'dayjs',
       globals: {
         dayjs: 'dayjs'

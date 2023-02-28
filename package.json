@@ -10,8 +10,8 @@
     "lint": "./node_modules/.bin/eslint src/* test/* build/*",
     "prettier": "prettier --write \"docs/**/*.md\"",
     "babel": "cross-env BABEL_ENV=build babel src --out-dir esm --copy-files && node build/esm",
-    "build": "cross-env BABEL_ENV=build INPUT=./src/index.js OUTPUT=./dayjs.min.js node build && npm run size",
-    "build-mp": "cross-env BABEL_ENV=build INPUT=./mp-dayjs.js OUTPUT=./mp-dayjs.min.js node build",
+    "build": "cross-env BABEL_ENV=build node build && npm run size",
+    "build-mp": "cross-env BABEL_ENV=build node build/mp-es.js",
     "sauce": "npx karma start karma.sauce.conf.js",
     "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3",
     "size": "size-limit && gzip-size dayjs.min.js"
