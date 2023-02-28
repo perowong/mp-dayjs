@@ -58,8 +58,8 @@ async function listLocaleJson(localeArr) {
     }
 
     build(configFactory({
-      input: './src/index.js',
-      fileName: './dayjs.min.js'
+      input: process.env.INPUT,
+      fileName: process.env.OUTPUT
     }))
 
     await promisify(ncp)('./types/', './')
