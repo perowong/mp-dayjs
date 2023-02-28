@@ -1,5 +1,5 @@
 // Chinese [zh]
-import dayjs from 'dayjs'
+import dayjs from '../index'
 
 const locale = {
   name: 'zh',
